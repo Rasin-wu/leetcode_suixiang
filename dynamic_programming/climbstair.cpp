@@ -29,4 +29,35 @@
 2 阶 + 1 阶
 */
 
+/*
+首先是dp[i - 1]，上i-1层楼梯，有dp[i - 1]种方法，那么再一步跳一个台阶不就是dp[i]了么。
 
+还有就是dp[i - 2]，上i-2层楼梯，有dp[i - 2]种方法，那么再一步跳两个台阶不就是dp[i]了么
+*/
+
+#include<iostream>
+#include<vector>
+
+using namespace std;
+
+class Solution
+{
+public:
+    int climbStair(int num){
+        if(num < 1) return num;
+        vector<int> dp(num + 1);
+        dp[1] = 1;
+        dp[2] = 2;
+        for(int i = 3; i <= num; i++){
+            dp[i] = dp[i -1 ] + dp[i - 2];
+
+        }
+        return dp[num];
+    }
+};
+
+
+int main()
+{
+
+}
