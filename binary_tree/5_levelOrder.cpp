@@ -28,7 +28,7 @@ struct TreeNode
     TreeNode *left;
     TreeNode *right;
     TreeNode(int x): val(x), left(NULL), right(NULL) {}
-}
+};
 
 
 class Solution
@@ -36,7 +36,7 @@ class Solution
 public:
     vector<vector<int>> levelOrder(TreeNode* root){
         queue<TreeNode*> que;
-        if(root!= NULL) queue.push(root);
+        if(root!= NULL) que.push(root);
 
         vector<vector<int>> result;
         while(!que.empty()){
