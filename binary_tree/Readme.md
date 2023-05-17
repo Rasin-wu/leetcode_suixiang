@@ -12,3 +12,7 @@ int rightdepth = getdepth(node->right);     // 右
 int depth = 1 + max(leftdepth, rightdepth); // 中
 return depth;
 ```
+
+### 最大二叉树
+https://programmercarl.com/0654.%E6%9C%80%E5%A4%A7%E4%BA%8C%E5%8F%89%E6%A0%91.html#%E6%80%9D%E8%B7%AF
+构造树一般采用的是前序遍历，因为先构造中间节点，然后递归构造左子树和右子树。
