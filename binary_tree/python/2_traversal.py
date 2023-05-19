@@ -1,8 +1,5 @@
-#!/mnt/lustre02/jiangsu/aispeech/home/xmw01/tools/anaconda3/bin/python
-# -*- coding: UTF-8 -*-
-
 from collections import deque
-
+from typing import List
 
 
 class TreeNode(object):
@@ -35,8 +32,6 @@ class Display(object):
 
         return results
 
-
-
 def constructBinaryTree(nums):
     Treelist = [None for _ in range(len(nums))]
 
@@ -57,13 +52,66 @@ def constructBinaryTree(nums):
     #返回根节点
     return root
 
+class Solution():
+    def preOrderTraversal(self, root: TreeNode) -> List[int]:
+        results = []
+
+        def traversal(root: TreeNode):
+            if (root == None):
+                return
+            results.append(root.val)
+            traversal(root.left)
+            traversal(root.right)
+
+        traversal(root)
+        return results
+
+class Solution1():
+    def inOrderTraversal(self, root: TreeNode) -> List[int]:
+        results = []
+
+        def traversal(root: TreeNode):
+            if (root == None):
+                return
+            traversal(root.left)
+            results.append(root.val)
+            traversal(root.right)
+
+        traversal(root)
+        return results
+
+
+class Solution2():
+    def postOrderTraversal(self, root: TreeNode) -> List[int]:
+        results = []
+
+        def traversal(root: TreeNode):
+            if (root == None):
+                return
+            results.append(root.val)
+            traversal(root.left)
+            traversal(root.right)
+
+        traversal(root)
+        return results
+
+
 if __name__ == '__main__':
 
     nums = [4,1,6,0,2,5,7,None,None,None,3,None,None,None,8]
     root = constructBinaryTree(nums)
+
+    solution = Solution()
+    listBinaryTree = solution.preOrderTraversal(root) 
+    for i in listBinaryTree:
+        print(i)   
+
+    """
     display = Display()
     listBinaryTree = display.levelOrder(root)
     for i in listBinaryTree:
         for j in i:
             print(j)
     print(root)
+    """
+
