@@ -4,8 +4,6 @@
 from collections import deque
 from typing import List
 
-
-
 class TreeNode(object):
     def __init__(self, val = 0, left = None, right = None):
         self.val = val
@@ -58,11 +56,26 @@ def constructBinaryTree(nums):
     #返回根节点
     return root
 
+class Solution:
+    def invertTree(self, root: TreeNode) -> TreeNode:
+        if not root: 
+            return None
+        root.left, root.right = root.right, root.left
+        self.invertTree(root.left)
+        self.invertTree(root.right)
+
+        return root
+
+
+
 if __name__ == '__main__':
 
     nums = [4,1,6,0,2,5,7,None,None,None,3,None,None,None,8]
     root = constructBinaryTree(nums)
     display = Display()
+
+    solution = Solution()
+    root = solution.invertTree(root)    
     listBinaryTree = display.levelOrder(root)
     for i in listBinaryTree:
         for j in i:
