@@ -36,9 +36,25 @@ def display(head: ListNode):
         while p:
             print(p.val)
             p = p.next
-        
+
+class Solution:
+    def removeElements(self, head: ListNode, target: int) -> ListNode:
+        dummy_head = ListNode(next = head)
+        cur = dummy_head
+
+        while(cur.next != None):
+            if(cur.next.val == target):
+                cur.next = cur.next.next
+            else:
+                cur = cur.next 
+
+        return dummy_head.next
+
 if __name__ == '__main__':
     data = [1, 2, 6, 3, 4, 5, 6]
     linkList = LinkList()
-    ll = linkList.initList(data)
-    display(ll)
+    head = linkList.initList(data)
+    #display(head)
+    solution = Solution()
+    result = solution.removeElements(head, 6)
+    display(result)
