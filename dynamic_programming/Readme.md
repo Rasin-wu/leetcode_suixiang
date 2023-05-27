@@ -91,6 +91,11 @@ https://programmercarl.com/0518.%E9%9B%B6%E9%92%B1%E5%85%91%E6%8D%A2II.html#%E6%
 ```
 dp[j] += dp[j - nums[i]]
 ```
+
+**01背包**
+
+先遍历物品，在反向遍历背包重量
+
 ```
 for (int i = 0; i < nums.size(); i++) {
             for (int j = bagSize; j >= nums[i]; j--) {
@@ -100,8 +105,10 @@ for (int i = 0; i < nums.size(); i++) {
 ```
 
 
-01背包 先遍历物品，在反向遍历背包重量
-完全背包：
+
+**完全背包：**
+https://programmercarl.com/0518.%E9%9B%B6%E9%92%B1%E5%85%91%E6%8D%A2II.html
+
 也是：先遍历物品，在正向遍历背包重量
 ```
 for (int i = 0; i < coins.size(); i++) { // 遍历物品

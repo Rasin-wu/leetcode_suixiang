@@ -36,3 +36,4 @@ if __name__ == '__main__':
     solution = Solution()
     result = solution.test_2d_bag_problem(bag_size, weight, value)
     print(result)
+
