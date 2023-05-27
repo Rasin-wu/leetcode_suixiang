@@ -72,7 +72,7 @@ for(int i = 0; i < weight.size(); i++) { // 遍历物品
 ```
 // 先遍历物品，再遍历背包
 for(int i = 0; i < weight.size(); i++) { // 遍历物品
-    for(int j = weight[i]; j <= bagWeight ; j++) { // 遍历背包容量
+    for(int j = weight[i]; j <= bagWeight ; j++) { // 遍历背包容量   这样是可以使用物品重复的
         dp[j] = max(dp[j], dp[j - weight[i]] + value[i]);
 
     }
@@ -85,4 +85,38 @@ for(int i = 0; i < weight.size(); i++) { // 遍历物品
 
 **因为dp[j] 是根据 下标j之前所对应的dp[j]计算出来的。 只要保证下标j之前的dp[j]都是经过计算的就可以了。**
 
+## 完全背包和01背包中的组合问题
+https://programmercarl.com/0518.%E9%9B%B6%E9%92%B1%E5%85%91%E6%8D%A2II.html#%E6%80%9D%E8%B7%AF
+求组合类问题的公式，都是类似这种：
+```
+dp[j] += dp[j - nums[i]]
+```
+```
+for (int i = 0; i < nums.size(); i++) {
+            for (int j = bagSize; j >= nums[i]; j--) {
+                dp[j] += dp[j - nums[i]];
+            }
+        }
+```
+
+
+01背包 先遍历物品，在反向遍历背包重量
+完全背包：
+也是：先遍历物品，在正向遍历背包重量
+```
+for (int i = 0; i < coins.size(); i++) { // 遍历物品
+    for (int j = coins[i]; j <= amount; j++) { // 遍历背包容量
+        dp[j] += dp[j - coins[i]];
+    }
+}
+```
+
+如果 先遍历背包，在正向遍历物品重量，就相当于做排列
+```
+for (int j = 0; j <= amount; j++) { // 遍历背包容量
+    for (int i = 0; i < coins.size(); i++) { // 遍历物品
+        if (j - coins[i] >= 0) dp[j] += dp[j - coins[i]];
+    }
+}
+```
 
