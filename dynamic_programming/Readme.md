@@ -120,3 +120,26 @@ for (int j = 0; j <= amount; j++) { // 遍历背包容量
 }
 ```
 
+## 完全背包的最小 最大问题
+
+https://programmercarl.com/0322.%E9%9B%B6%E9%92%B1%E5%85%91%E6%8D%A2.html#%E6%80%9D%E8%B7%AF
+
+https://programmercarl.com/0279.%E5%AE%8C%E5%85%A8%E5%B9%B3%E6%96%B9%E6%95%B0.html#%E6%80%9D%E8%B7%AF
+
+
+本题求钱币最小个数，那么钱币有顺序和没有顺序都可以，都不影响钱币的最小个数。
+
+所以本题并不强调集合是组合还是排列。
+
+如果求组合数就是外层for循环遍历物品，内层for遍历背包。
+
+如果求排列数就是外层for遍历背包，内层for循环遍历物品。
+
+两题的dp递推公式都比较相似：
+```
+dp[j] = min(dp[j - coins[i]] + 1, dp[j]);
+dp[j] = min(dp[j - i * i] + 1, dp[j]);
+```
+
+## 背包问题总结
+https://programmercarl.com/%E8%83%8C%E5%8C%85%E6%80%BB%E7%BB%93%E7%AF%87.html#%E8%83%8C%E5%8C%85%E9%80%92%E6%8E%A8%E5%85%AC%E5%BC%8F
