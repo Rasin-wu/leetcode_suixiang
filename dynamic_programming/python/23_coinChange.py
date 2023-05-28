@@ -40,7 +40,7 @@ from typing import List
 
 class Solution:
     def coinChange(self, coins: List[int], amount: int) -> int:
-        dp = [float('inf')] * (amount + 1)
+        dp = [float('inf')] * (amount + 1)  #因为求的是最小值，初始化成最大值
         dp[0] = 0
 
         for i in range(len(coins)):
