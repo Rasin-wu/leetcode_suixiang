@@ -185,3 +185,6 @@ if (text1[i - 1] == text2[j - 1]) {
         dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]);
 }
 ```
+
+## 编辑距离总结:
+https://programmercarl.com/%E4%B8%BA%E4%BA%86%E7%BB%9D%E6%9D%80%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB%EF%BC%8C%E5%8D%A1%E5%B0%94%E5%81%9A%E4%BA%86%E4%B8%89%E6%AD%A5%E9%93%BA%E5%9E%AB.html#%E5%88%A4%E6%96%AD%E5%AD%90%E5%BA%8F%E5%88%97
