@@ -5,11 +5,12 @@ from typing import List
 
 class Solution:
     def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
-        res = [:]
+        res = nums[:]
         hash = dict()
-        nums.sort()
+        res.sort()
         for i, item in enumerate(res):
-            hash[i] = i
+            if item not in hash.keys():
+                hash[item] = i
 
         for i, item in enumerate(nums):
             res[i] = hash[nums[i]]
