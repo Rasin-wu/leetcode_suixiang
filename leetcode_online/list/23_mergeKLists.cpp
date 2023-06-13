@@ -35,6 +35,8 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+
+// 第一个和第二个合并之后，在按顺序合并
 class Solution {
 public:
     ListNode* mergeKLists(vector<ListNode*>& lists) {
