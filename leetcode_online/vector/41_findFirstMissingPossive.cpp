@@ -16,6 +16,7 @@
 https://leetcode.cn/problems/first-missing-positive/
 */
 
+//暴力解法
 class Solution {
 public:
     int firstMissingPositive(vector<int>& nums) {
