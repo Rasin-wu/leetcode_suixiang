@@ -24,12 +24,14 @@ https://leetcode.cn/problems/reverse-linked-list/
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+
+//反转链表，不用虚拟头节点，如果有虚拟头节点，还会报  heap-use-after-free
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
         ListNode* pre = nullptr;
         ListNode* cur = head;
-        
+
         while (cur) {
             ListNode* next = cur->next;
             cur->next = pre;
